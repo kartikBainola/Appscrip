@@ -1,22 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:appscrip/Model/Model_User.dart';
 
-import '../../Model/Model_User.dart';
-
-class DetailsScreen extends StatefulWidget {
+class DetailsScreen extends StatelessWidget {
   final Users user;
 
-  const DetailsScreen({super.key, required this.user});
+  const DetailsScreen({Key? key, required this.user}) : super(key: key);
 
-  @override
-  State<DetailsScreen> createState() => _DetailsScreenState();
-}
-
-class _DetailsScreenState extends State<DetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.user.name),
+        title: Text(user.name),
         actions: [
           IconButton(
             onPressed: () {},
@@ -36,15 +30,15 @@ class _DetailsScreenState extends State<DetailsScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: _UserfirstContainer(),
+              child: _userfirstContainer(),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: _UserAddressContainer(),
+              child: _userAddressContainer(),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: _UserCompanyContainer(),
+              child: _userCompanyContainer(),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -56,7 +50,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 
-  Container _UserfirstContainer() {
+  Container _userfirstContainer() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -75,7 +69,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "User Details",
+            "user Details",
             style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold),
           ),
           SizedBox(
@@ -85,7 +79,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: 'Username:',
+                  text: 'username:',
                   style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
@@ -93,7 +87,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.username,
+                  text: user.username,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -115,7 +109,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.email,
+                  text: user.email,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -137,7 +131,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.phone,
+                  text: user.phone,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -155,7 +149,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 
-  Container _UserAddressContainer() {
+  Container _userAddressContainer() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -192,7 +186,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.street,
+                  text: user.address.street,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -214,7 +208,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.suite,
+                  text: user.address.suite,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -236,7 +230,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.city,
+                  text: user.address.city,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -258,7 +252,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.zipcode,
+                  text: user.address.zipcode,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -276,7 +270,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
     );
   }
 
-  Container _UserCompanyContainer() {
+  Container _userCompanyContainer() {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -313,7 +307,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.company.name,
+                  text: user.company.name,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -335,7 +329,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.company.catchPhrase,
+                  text: user.company.catchPhrase,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -357,7 +351,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.company.bs,
+                  text: user.company.bs,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -412,7 +406,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.geo.lat,
+                  text: user.address.geo.lat,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,
@@ -434,7 +428,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   ),
                 ),
                 TextSpan(
-                  text: widget.user.address.geo.lng,
+                  text: user.address.geo.lng,
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.w800,

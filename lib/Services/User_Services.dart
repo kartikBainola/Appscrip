@@ -8,10 +8,10 @@ class AuthService {
         await http.get(Uri.parse('https://jsonplaceholder.typicode.com/users'));
     if (response.statusCode == 200) {
       List<dynamic> body = jsonDecode(response.body);
-      List<Users> users =
+      List<Users> employee =
           body.map((dynamic client) => Users.fromJson(client)).toList();
-      users.sort((a, b) => a.name.compareTo(b.name));
-      return users;
+      employee.sort((a, b) => a.name.compareTo(b.name));
+      return employee;
     } else {
       throw Exception('failed to load users');
     }

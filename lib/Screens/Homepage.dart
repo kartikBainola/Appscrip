@@ -66,15 +66,8 @@ class _HomepageState extends State<Homepage> {
                         return Center(child: Text('Error: ${snapshot.error}'));
                       }
                       return RefreshIndicator(
-                        onRefresh: _refreshUsers,
-                        child: ListView.builder(
-                            scrollDirection: Axis.vertical,
-                            shrinkWrap: true,
-                            itemCount: snapshot.data!.length,
-                            itemBuilder: (context, index) {
-                              return userList(user: snapshot.data![index]);
-                            }),
-                      );
+                          onRefresh: _refreshUsers,
+                          child: listUsers(users: snapshot.data!));
                     } else {
                       return Center(
                           child: SpinKitWave(
